@@ -5,11 +5,27 @@ plugins {
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
     kotlin("jvm") version "1.4.31"
     kotlin("plugin.spring") version "1.4.31"
+    id("org.sonarqube") version "2.7"
+    id("jacoco")
 }
 
 group = "com.example"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
+
+jacoco {
+    toolVersion = "0.8.6"
+}
+
+sonarqube {
+    properties {
+        property("sonar.projectKey", "javatokotlin")
+        property("sonar.projectName", "javatokotlin")
+        property("sonar.java.binaries", "build/classes/kotlin/main")
+        property("sonar.coverage.jacoco.xmlReportPaths", "build/reports/coverage")
+    }
+}
+
 
 repositories {
     maven { url = uri("https://maven.aliyun.com/repository/jcenter") }

@@ -1,7 +1,7 @@
 package com.example.javatokotlin
 
 class LicenceServiceKotlin {
-    fun getDriversLicence(personKotlin: PersonKotlin) = "Performing get driver's licence action"
+    fun getDriversLicence(personKotlin: PersonKotlin) = println(personKotlin.name)
 }
 
 class Police {

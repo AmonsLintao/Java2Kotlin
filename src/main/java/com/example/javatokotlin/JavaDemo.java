@@ -3,8 +3,8 @@ package com.example.javatokotlin;
 import java.util.Optional;
 
 public class JavaDemo {
-    private LicenceServiceJava licenceServiceJava;
-    private Police police = new Police();
+    private LicenceServiceJava licenceServiceJava = new LicenceServiceJava();
+    private PoliceJava police = new PoliceJava();
 
     // 01 | Optional.map() vs. Safe-Call Operator
     public void accessProperties() {
@@ -20,7 +20,7 @@ public class JavaDemo {
                 .map(licenceServiceJava::getDriversLicence);
     }
 
-    // Optional.orElse() vs. Elvis Operator
+    // 03 | Optional.orElse() vs. Elvis Operator
     public void retrieveWithFallbackValue() {
         boolean isOfLegalAge = Util.getNextCarIfPresentJava()
                 .map(CarJava::getDriver)

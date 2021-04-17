@@ -1,7 +1,7 @@
 package com.example.javatokotlin
 
 class KotlinDemo(
-    val licenceServiceKotlin: LicenceServiceKotlin,
+    val licenceServiceKotlin: LicenceServiceKotlin = LicenceServiceKotlin(),
     val police: Police = Police()
 ) {
 
@@ -25,7 +25,7 @@ class KotlinDemo(
     // 05 | Optional.filter() vs. takeIf() Function
     fun checkConditionAndReturnAccordingly() {
         val illegalDriver =
-            getNextCarIfPresentKotlin()?.driver.takeIf { it?.age ?: 0 > 18 }
+            getNextCarIfPresentKotlin()?.driver.takeIf { it?.age ?: 0 < 18 }
     }
 
     // 06 | Optional.ifPresent() vs. let() Function

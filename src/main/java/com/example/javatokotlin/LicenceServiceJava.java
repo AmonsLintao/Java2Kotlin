@@ -1,12 +1,14 @@
 package com.example.javatokotlin;
 
+import org.springframework.stereotype.Component;
+
 public class LicenceServiceJava {
     public String getDriversLicence(PersonJava personJava) {
-        return "Performing get driver's licence action";
+        return "getDriversLicence: " + personJava.getName();
     }
 }
 
-public class Police {
+class PoliceJava {
     public String checkIdentity(PersonJava personJava) {
         return "checking Identity";
     }

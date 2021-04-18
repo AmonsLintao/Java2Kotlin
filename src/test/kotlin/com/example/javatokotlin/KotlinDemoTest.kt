@@ -13,14 +13,7 @@ internal class KotlinDemoTest {
     @Nested
     inner class WhenAccessProperties {
         @Test
-        fun `should return null given XXX`() {
-            val age = kotlinDemo.accessProperties()
-
-            assertEquals(null, age)
-        }
-
-        @Test
-        fun `should return null given NO next car`() {
+        fun `should return null given NO next car driver no age`() {
             mockkStatic("com.example.javatokotlin.PersonKotlinKt")
             every { getNextCarIfPresentKotlin() } returns null
 
@@ -38,5 +31,16 @@ internal class KotlinDemoTest {
 
             assertEquals(null, age)
         }
+
+        @Test
+        fun `should return null given record driver's age`() {
+            mockkStatic("com.example.javatokotlin.PersonKotlinKt")
+            every { getNextCarIfPresentKotlin() } returns CarKotlin(PersonKotlin("Lintao", 18))
+
+            val age = kotlinDemo.accessProperties()
+
+            assertEquals(18, age)
+        }
+
     }
 }

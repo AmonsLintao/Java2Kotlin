@@ -6,9 +6,7 @@ class KotlinDemo(
 ) {
 
     // 01 | Optional.map() vs. Safe-Call Operator
-    fun accessProperties() {
-        val age = getNextCarIfPresentKotlin()?.driver?.age
-    }
+    fun accessProperties() = getNextCarIfPresentKotlin()?.driver?.age
 
     // 02 | Optional.map() vs. let() Function
     fun safeCallExternalMethod() {

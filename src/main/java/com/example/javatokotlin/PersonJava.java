@@ -48,8 +48,7 @@ class CarJava {
 
 class Util {
     public static Optional<CarJava> getNextCarIfPresentJava() {
-//        int i = new Random(20).nextInt();
-        int i = 20;
+        int i = new Random(20).nextInt();
         if (i > 10) {
             return Optional.empty();
         } else {

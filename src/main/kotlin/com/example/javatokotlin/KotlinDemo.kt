@@ -6,11 +6,15 @@ class KotlinDemo(
 ) {
 
     // 01 | Optional.map() vs. Safe-Call Operator
-    fun accessProperties() = getNextCarIfPresentKotlin()?.driver?.age
+    fun accessProperties() {
+        val age = getNextCarIfPresentKotlin()?.driver?.age
+    }
 
     // 02 | Optional.map() vs. let() Function
-    fun safeCallExternalMethod() =
-        getNextCarIfPresentKotlin()?.driver?.let { licenceServiceKotlin.getDriversLicence(it) }
+    fun safeCallExternalMethod() {
+        getNextCarIfPresentKotlin()?.driver
+            ?.let { licenceServiceKotlin.getDriversLicence(it) }
+    }
 
     // 03 | Optional.orElse() vs. Elvis Operator
     fun retrieveWithFallbackValue() {
@@ -25,7 +29,7 @@ class KotlinDemo(
     // 05 | Optional.filter() vs. takeIf() Function
     fun checkConditionAndReturnAccordingly() {
         val illegalDriver =
-            getNextCarIfPresentKotlin()?.driver.takeIf { it?.age ?: 0 < 18 }
+            getNextCarIfPresentKotlin()?.driver?.takeIf { it.age ?: 0 < 18 }
     }
 
     // 06 | Optional.ifPresent() vs. let() Function

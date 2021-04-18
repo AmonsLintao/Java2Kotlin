@@ -8,7 +8,7 @@ public class JavaDemo {
 
     // 01 | Optional.map() vs. Safe-Call Operator
     public void accessProperties() {
-        Optional<Integer> integer = Util.getNextCarIfPresentJava()
+        Optional<Integer> age = Util.getNextCarIfPresentJava()
                 .map(CarJava::getDriver)
                 .flatMap(PersonJava::getAge);
     }

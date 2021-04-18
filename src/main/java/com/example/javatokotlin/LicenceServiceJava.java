@@ -3,8 +3,8 @@ package com.example.javatokotlin;
 import org.springframework.stereotype.Component;
 
 public class LicenceServiceJava {
-    public String getDriversLicence(PersonJava personJava) {
-        return "getDriversLicence: " + personJava.getName();
+    public String getDriversLicence(PersonJava driver) {
+        return "getDriversLicence: " + driver.getName();
     }
 }
 
